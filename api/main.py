@@ -3,11 +3,9 @@ from pydantic import BaseModel
 import joblib
 import pandas as pd
 import sys
-import transform
+from src import transformers
 
-
-sys.modules['__main__'] = transform
-
+sys.modules["__main__"] = transformers
 
 app = FastAPI()
 
@@ -76,7 +74,7 @@ class Client(BaseModel):
     fclose_flag: int | None = None
 
 
-pipeline = joblib.load('pipeline.pkl')
+pipeline = joblib.load('models/pipeline.pkl')
 
 
 @app.post('/predict')

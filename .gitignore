@@ -17,3 +17,9 @@ venv/
 
 # Mac
 .DS_Store
+
+# VS Code
+.vscode/
+
+# Exceptions
+!data/sample/sample_request.json
